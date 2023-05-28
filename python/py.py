@@ -8,10 +8,16 @@ print("2, SUBTRACT")
 print("3, MULTIPLY")
 print("4, DIVIDE")
 
+    #setting exceptions for ValueError and TypeError
+
 
 try:
 
+    #getting the string input from user
+
     operation = input("SELECT OPERATION:")
+
+    #changing the data type to int
 
     operation = int(operation)
 
@@ -30,10 +36,19 @@ except:
 def add_numbers():
 
     try:
+
+        #getting the number input from user and then converting the data type to float
+
         num = input("Enter a number:")
+
         num = float(num)
+
+        #returns the number
+
         return num
     
+        #if incorrect value or type is entered, handles the error
+
     except ValueError:
         
         print("please enter a number")
@@ -48,10 +63,20 @@ def add_numbers():
 def subtract_numbers():
 
     try:
+
+         #getting the number input from user and then converting the data type to float
+
         num = input("Enter a number:")
+
         num = float(num)
+
+        #returns the number
+
         return num
     
+    
+        #if incorrect value or type is entered, handles the error
+
     except ValueError:
         
         print("please enter a number")
@@ -66,9 +91,18 @@ def subtract_numbers():
 def multiply_numbers():
 
     try:
+
+         #getting the number input from user and then converting the data type to float
+
         num = input("Enter a number:")
+
         num = float(num)
+
+        #returns the number
+
         return num
+    
+        #if incorrect value or type is entered, handles the error
     
     except ValueError:
         
@@ -84,9 +118,17 @@ def multiply_numbers():
 def divide_numbers():
 
     try:
+
+         #getting the number input from user and then converting the data type to float
+
         num = input("Enter a number:")
         num = float(num)
+
+        #returns the number
+
         return num
+    
+        #if incorrect value or type is entered, handles the error
     
     except ValueError:
         
@@ -101,9 +143,13 @@ def divide_numbers():
 
 try:
 
+#if user inputs 1 at operation selection, calls the function
+
     if(operation == 1):
         
         while(True):
+
+            #loops the function call which is returned inside the function
 
             num1 = add_numbers()
 
@@ -113,6 +159,8 @@ try:
 
             print(added)
 
+            #breaks the loop once both both nums are entered since neither can be Null once values are assigned
+
             if(num1 == None or num2 == None):
 
                 print("error")
@@ -121,7 +169,7 @@ try:
 
                 break    
         
-
+    #if user inputs 2 at operation selection, calls the function
 
     elif(operation == 2):
 
@@ -135,6 +183,8 @@ try:
 
             print(subtracted)
 
+            #breaks the loop once both both nums are entered since neither can be Null once values are assigned
+
             if(num1 == None or num2 == None):
 
                 print("error")
@@ -143,7 +193,7 @@ try:
 
                 break
 
-
+    #if user inputs 3 at operation selection, calls the function
 
     elif(operation == 3):
 
@@ -156,6 +206,8 @@ try:
 
             print(multiplied)
 
+            #breaks the loop once both both nums are entered since neither can be Null once values are assigned
+
             if(num1 == None or num2 == None):
 
                 print("error")
@@ -164,38 +216,42 @@ try:
 
                 break
 
-
+    #if user inputs 4 at operation selection, calls the function
 
     elif(operation == 4):
     
         while(True):
                 
-                num1 = divide_numbers()
+            num1 = divide_numbers()
 
-                num2 = divide_numbers()
+            num2 = divide_numbers()
 
-                divided = num1 / num2
+            divided = num1 / num2
 
-                print(divided)
+            print(divided)
 
-                if(num1 == None or num2 == None):
+            #breaks the loop once both both nums are entered since neither can be Null once values are assigned
 
-                    print("error")
+            if(num1 == None or num2 == None):
 
-                else:
+                print("error")
 
-                    break
+            else:
+
+                break
 
     elif(operation > 4):
 
         print("please choose a number within parameters")
+
+    #handles exceptions where user inputs incorrect values or types when choosing operation
 
 except TypeError:
 
     print("unsupported data type, please enter a number")
 
 except ValueError:
-    
+
     print("please enter a number")
 
 except:print("error")
